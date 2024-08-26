@@ -23,6 +23,10 @@ describe "It should calculate sum of the number in a string" do
       expect(StringCalculator.add("//:\n2:3:4")).to eq(9)
     end
 
+    it "should not process negative numbers" do
+      expect{StringCalculator.add("-1,-4,9,8")}.to raise_error("negative numbers not allowed: -1,-4")
+    end
+
   end
 
 end
